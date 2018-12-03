@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/../threeJs study/.idea/3d.iml" filepath="$PROJECT_DIR$/../threeJs study/.idea/3d.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/3d.iml" filepath="$PROJECT_DIR$/.idea/3d.iml" />
+>>>>>>> initail commit!
     </modules>
   </component>
 </project>
