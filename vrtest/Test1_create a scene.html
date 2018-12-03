@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8>
+		<title>Holle three.js </title>
+		<style>
+			body { margin: 0;
+			}
+			canvas { width: 100%; height: 100% }
+                        #info{
+                            position:absolute;
+                            top:0px;
+                            width:100%;
+                            padding:5px;
+                            text-align:center;
+                          
+                           
+                        }
+                </style>
+	</head>
+	<body>
+		<script src="../main/three.js"></script>
+                <div id="info">
+                <a  href="https://github.com/Thinkia/ThreeJs/blob/master/vrtest/Test1_create%20a%20scene.html" target="_blank"> Code</a>--
+                <a  href="https://www.bilibili.com/video/av17072059/"  target="_blank" >Video</a>
+               </div>
+		<div id="container"></div>
+		<script>
+			// Our Javascript will go here.
+			var scene = new THREE.Scene();
+			
+			//scene.background = new THREE.Color( 0xffffff );
+			
+			var camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.1, 1000 );
+			
+			/* fov ,aspect,near,far 视角,方位,近焦,远焦   透视的投影相机*/
+			
+			var renderer = new THREE.WebGLRenderer();	/*跨域渲染*/			
+			
+			renderer.setSize( window.innerWidth, window.innerHeight );			
+			
+			document.body.appendChild( renderer.domElement );			
+			
+			var geometry = new THREE.BoxGeometry(1,1,1);/*空间形状*/
+			
+			var material = new THREE.MeshBasicMaterial({wireframe:true} );/*材质*/
+			
+			var cube = new THREE.Mesh( geometry, material );  /*cube*/ 
+			
+			scene.add( cube );
+			
+			camera.position.z = 3;
+						
+			function animate() {  /*旋转动画 */
+			
+			requestAnimationFrame( animate );
+			
+			cube.rotation.y += -0.01;/*绕轴旋转   +-  逆顺*/
+										
+			renderer.render( scene, camera );
+			
+			}
+			
+			animate();
+
+		</script>
+	</body>
+</html>
